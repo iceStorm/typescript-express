@@ -1,7 +1,11 @@
 import express from 'express';
 import logger from 'morgan';
-import { AppConstructor } from './app.interface';
 import { BaseController } from './common/base.controller';
+
+export interface AppConstructor {
+  port: number;
+  controllers: BaseController[];
+}
 
 export class App {
   private port: number;

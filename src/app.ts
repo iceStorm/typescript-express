@@ -1,17 +1,17 @@
 import express from 'express';
 import logger from 'morgan';
 import { AppConstructor } from './app.interface';
-import { BaseController } from './common/controller';
+import { BaseController } from './common/base.controller';
 
 export class App {
   private port: number;
   private app: express.Application;
   private controllers: BaseController[];
 
-  constructor(input: AppConstructor) {
+  constructor(app: AppConstructor) {
     this.app = express();
-    this.port = input.port;
-    this.controllers = input.controllers;
+    this.port = app.port;
+    this.controllers = app.controllers;
 
     this.initializeMiddlewares();
     this.initializeControllers();

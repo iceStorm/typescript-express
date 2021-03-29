@@ -1,4 +1,4 @@
-import { BaseController } from './common/controller';
+import { BaseController } from './common/base.controller';
 
 export interface AppConstructor {
   port: number;
